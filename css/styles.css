@@ -27,6 +27,10 @@ body {
 	padding-right: 20px;
 	padding-left: 20px;
 }
+#pl1{
+  opacity: 0.5;
+  border-color: grey;
+}
 .btns{
   margin-top:18%;
   padding-left:50px;
@@ -35,5 +39,8 @@ body {
   display: none;
 }
 #die-roll{
+  display: none;
+}
+#total1{
   display: none;
 }

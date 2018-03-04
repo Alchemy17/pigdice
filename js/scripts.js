@@ -51,6 +51,7 @@ function switchPlayers() {
     $("total1").text(playersturn);
     $("#player1turn").hide();
     $("#player2turn").text(p2.playername + "'s turn").show();
+    $("#pl1").show();
     nameAndScore();
 
   } else if ($("#player2turn").is(":visible")) {
@@ -60,6 +61,7 @@ function switchPlayers() {
     $("total1").text(playersturn);
     $("#player2turn").hide();
     $("#player1turn").text(p1.playername + "'s turn").show();
+    $("#pl1").show();
     nameAndScore();
 
   }
