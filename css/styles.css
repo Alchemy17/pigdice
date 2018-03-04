@@ -34,3 +34,6 @@ body {
 .gameMode{
   display: none;
 }
+#die-roll{
+  display: none;
+}

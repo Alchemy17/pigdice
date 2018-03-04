@@ -23,26 +23,47 @@ function issaOne() {
     $("#total1").text(playersturn);
     alert("Oops! Issa One");
     $("#player1turn").hide();
-    $("#player2turn").text(p1.playername + "'s turn").show();
-
-  } else if ($("#player2turn").is(":visible")) {
+    $("#player2turn").text(p2.playername + "'s turn").show();
+    p2.score = 0;
+    $("#p1TotalScore").text(p1.score);
+    nameAndScore();
+  }
+  else if ($("#player2turn").is(":visible")) {
     playersturn = [0];
     $("#total1").text(playersturn);
     alert("Oops! Issa One");
     $("#player2turn").hide();
-    $("#player1turn").text(p2.playername + "'s turn").show();
+    $("#player1turn").text(p1.playername + "'s turn").show();
+    p1.score = 0;
+    $("#p2TotalScore").text(p2.score);
+    nameAndScore();
   }
 }
 
-function switchPlayers(){
-  if($("#player1turn").is(":visible")){
-    playersturn.push(rolling);
-    playersturn.reduce(function(a, b) {
-      return a + b;
-    }, 0);
-    p1.score = (p1.score+=playersturn)
-    alert("hey " + p1.playername + " ya got " + p1.score);
+function switchPlayers() {
+  var newTurn = playersturn.reduce(function(a, b) {
+    return a + b
+  }, 0);
+  if ($("#player1turn").is(":visible")) {
+    p1.score = (p1.score += newTurn)
+    alert("hey " + p1.playername + " you're holding at " + p1.score);
+    playersturn = [0];
+    $("total1").text(playersturn);
+    $("#player1turn").hide();
+    $("#player2turn").text(p2.playername + "'s turn").show();
+    nameAndScore();
+
+  } else if ($("#player2turn").is(":visible")) {
+    p2.score = (p2.score += newTurn)
+    alert("hey " + p2.playername + " you're holding at " + p2.score);
+    playersturn = [0];
+    $("total1").text(playersturn);
+    $("#player2turn").hide();
+    $("#player1turn").text(p1.playername + "'s turn").show();
+    nameAndScore();
+
   }
+
 }
 
 
@@ -59,13 +80,14 @@ $(document).ready(function() {
     score2 = 0;
     p1 = new Player(p1name, score1);
     p2 = new Player(p2name, score2);
-    console.log(p1.score);
     nameAndScore();
     $("div.hide1").hide();
     $("div.gameMode").show();
+    $("#player1turn").text(p1.playername + "'s turn").show();
+  });
     $("input#roll").click(function(event) {
       event.preventDefault();
-      $("die-roll").show();
+      $("#die-roll").show();
       var rolling = (Math.floor(Math.random() * 6 + 1));
       $("#die-roll").text(rolling);
       if (rolling == 1) {
@@ -78,13 +100,13 @@ $(document).ready(function() {
         $("#total1").text(playersturn);
       }
     });
-  $("#hold").click(function(event){
-    switchPlayers();
-    if(p1.score>=100){
-      alert(p1.playername+ " takes the cake!");
-    }
-  });
-  });
+    $("#hold").click(function(event) {
+      switchPlayers();
+      if (p1.score >= 100) {
+        alert(p1.playername + " takes the cake!");
 
-
+      } else if (p2.score >= 100) {
+        alert(p2.playername + " takes the cake!");
+      }
+    });
 });
