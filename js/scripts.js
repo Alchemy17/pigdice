@@ -1,4 +1,4 @@
-//Backend
+//Backend or Business Logic
 var player1 = ""
 var player2 = ""
 
@@ -70,11 +70,7 @@ function switchPlayers() {
   }
 }
 
-
-
-
-
-//Frontend
+//Frontend or User Interface
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
