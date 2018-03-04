@@ -38,6 +38,8 @@ function issaOne() {
     $("#player1turn").text(p1.playername + "'s turn").show();
     p1.score = 0;
     $("#p2TotalScore").text(p2.score);
+    $("#pl2").addClass('pl1');
+    $("#pl1").removeClass('pl1');
     nameAndScore();
   }
 }
