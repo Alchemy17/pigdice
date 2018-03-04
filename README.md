@@ -1,6 +1,6 @@
 #Pig Dice
 
-##A Gam By Abdulrahman Mohamed
+##A Game By Abdulrahman Mohamed
 
 ### Rules
 > 1. The first Player to reach 100 wins!
