@@ -26,6 +26,8 @@ function issaOne() {
     $("#player2turn").text(p2.playername + "'s turn").show();
     p2.score = 0;
     $("#p1TotalScore").text(p1.score);
+    $("#pl2").removeClass("pl1");
+    $("#pl1").addClass("pl1");
     nameAndScore();
   }
   else if ($("#player2turn").is(":visible")) {
@@ -64,9 +66,7 @@ function switchPlayers() {
     $("#pl2").addClass('pl1');
     $("#pl1").removeClass('pl1');
     nameAndScore();
-
   }
-
 }
 
 
