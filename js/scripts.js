@@ -105,9 +105,10 @@ $(document).ready(function() {
     switchPlayers();
     if (p1.score >= 100) {
       alert(p1.playername + " takes the cake!");
-
+      document.location.reload(true);
     } else if (p2.score >= 100) {
       alert(p2.playername + " takes the cake!");
+      document.location.reload(true);
     }
   });
 });
