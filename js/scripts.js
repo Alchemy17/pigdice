@@ -34,6 +34,17 @@ function issaOne() {
   }
 }
 
+function switchPlayers(){
+  if($("#player1turn").is(":visible")){
+    playersturn.push(rolling);
+    playersturn.reduce(function(a, b) {
+      return a + b;
+    }, 0);
+    p1.score = (p1.score+=playersturn)
+    alert("hey " + p1.playername + " ya got " + p1.score);
+  }
+}
+
 
 
 
@@ -57,7 +68,6 @@ $(document).ready(function() {
       $("die-roll").show();
       var rolling = (Math.floor(Math.random() * 6 + 1));
       $("#die-roll").text(rolling);
-      console.log(rolling);
       if (rolling == 1) {
         issaOne();
       } else {
@@ -69,8 +79,10 @@ $(document).ready(function() {
       }
     });
   $("#hold").click(function(event){
-    // switchPlayers();
-    // if(p1.)
+    switchPlayers();
+    if(p1.score>=100){
+      alert(p1.playername+ " takes the cake!");
+    }
   });
   });
 
