@@ -79,8 +79,8 @@ function switchPlayers() {
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
-    var p1name = $("input#player1name").val();
-    var p2name = $("input#player2name").val();
+    var p1name = $("input#player1name") .val();
+    var p2name = $("input#player2name") .val();
     score1 = 0;
     score2 = 0;
     p1 = new Player(p1name, score1);
