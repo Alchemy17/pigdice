@@ -51,9 +51,9 @@ function switchPlayers() {
     $("total1").text(playersturn);
     $("#player1turn").hide();
     $("#player2turn").text(p2.playername + "'s turn").show();
-    $("#pl1").show();
+    $("#pl2").removeClass("pl1");
+    $("#pl1").addClass("pl1");
     nameAndScore();
-
   } else if ($("#player2turn").is(":visible")) {
     p2.score = (p2.score += newTurn)
     alert("hey " + p2.playername + " you're holding at " + p2.score);
@@ -61,7 +61,8 @@ function switchPlayers() {
     $("total1").text(playersturn);
     $("#player2turn").hide();
     $("#player1turn").text(p1.playername + "'s turn").show();
-    $("#pl1").show();
+    $("#pl2").addClass('pl1');
+    $("#pl1").removeClass('pl1');
     nameAndScore();
 
   }
@@ -99,6 +100,7 @@ $(document).ready(function() {
         playersturn.reduce(function(a, b) {
           return a + b;
         }, 0);
+        console.log(total1);
         $("#total1").text(playersturn);
       }
     });
