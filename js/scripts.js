@@ -33,7 +33,6 @@ function issaOne() {
     $("#player1turn").text(p2.playername + "'s turn").show();
   }
 }
-console.log(issaOne());
 
 
 
@@ -49,6 +48,7 @@ $(document).ready(function() {
     score2 = 0;
     p1 = new Player(p1name, score1);
     p2 = new Player(p2name, score2);
+    console.log(p1.score);
     nameAndScore();
     $("div.hide1").hide();
     $("div.gameMode").show();
@@ -68,6 +68,10 @@ $(document).ready(function() {
         $("#total1").text(playersturn);
       }
     });
+  $("#hold").click(function(event){
+    // switchPlayers();
+    // if(p1.)
+  });
   });
 
 
