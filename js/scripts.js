@@ -97,11 +97,7 @@ $(document).ready(function() {
         issaOne();
       } else {
         playersturn.push(rolling);
-        playersturn.reduce(function(a, b) {
-          return a + b;
-        }, 0);
-        console.log(total1);
-        $("#total1").text(playersturn);
+        $("#result").text(playersturn.reduce(function(a, b) {return a + b}, 0));
       }
     });
     $("#hold").click(function(event) {
