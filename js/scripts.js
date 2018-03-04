@@ -89,8 +89,8 @@ $(document).ready(function() {
     $("div.hide1").hide();
     $("div.gameMode").show();
     $("#player1turn").text(p1.playername + "'s turn").show();
-    $("#pl2").removeClass("pl1");
-    $("#pl1").addClass("pl1");
+    $("#pl2").addClass('pl1');
+    $("#pl1").removeClass('pl1');
   });
     $("input#roll").click(function(event) {
       event.preventDefault();
